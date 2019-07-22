@@ -1,11 +1,3 @@
-//
-//  HabitControllerTests.swift
-//  CedarTests
-//
-//  Created by Patrick Mick on 7/21/19.
-//  Copyright © 2019 Patrick Mick. All rights reserved.
-//
-
 import XCTest
 
 @testable import Cedar
@@ -16,8 +8,9 @@ class HabitControllerTests: XCTestCase {
     let noCompletionsHabit = Habit(id: "1", title: "Test", completions: [])
     let completedLongAgoHabit = Habit(id: "1", title: "Test", completions: [HabitCompletion(date: Date(timeIntervalSince1970: 0))])
     let completedTodayHabit = Habit(id: "1", title: "Test", completions: [HabitCompletion()])
-
-
+    let completedYesterdayHabit = Habit(id: "1", title: "Test", completions: [HabitCompletion(date: Date(timeIntervalSinceNow: -(24 * 60 * 60)))])
+    let completedNinetyDaysAgoHabit = Habit(id: "1", title: "Test", completions: [HabitCompletion(date: Date(timeIntervalSinceNow: -(24 * 60 * 60 * 90)))])
+    
     func testIsCompleted() {
         XCTAssertFalse(sut.isComplete(habit: noCompletionsHabit))
         XCTAssertFalse(sut.isComplete(habit: completedLongAgoHabit))
@@ -30,5 +23,8 @@ class HabitControllerTests: XCTestCase {
         
         XCTAssertFalse(sut.wasCompleted(daysAgo: 1, habit: completedTodayHabit))
         XCTAssertTrue(sut.wasCompleted(daysAgo: 0, habit: completedTodayHabit))
+        
+        XCTAssertTrue(sut.wasCompleted(daysAgo: 1, habit: completedYesterdayHabit))
+        XCTAssertTrue(sut.wasCompleted(daysAgo: 90, habit: completedNinetyDaysAgoHabit))
     }
 }
