@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CD682E5022E5420100705A23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD682E4F22E5420100705A23 /* AppDelegate.swift */; };
+		CD682E5222E5420100705A23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD682E5122E5420100705A23 /* SceneDelegate.swift */; };
+		CD682E5422E5420100705A23 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD682E5322E5420100705A23 /* ContentView.swift */; };
+		CD682E5622E5420300705A23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD682E5522E5420300705A23 /* Assets.xcassets */; };
+		CD682E5922E5420300705A23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD682E5822E5420300705A23 /* Preview Assets.xcassets */; };
+		CD682E5C22E5420300705A23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD682E5A22E5420300705A23 /* LaunchScreen.storyboard */; };
+		CD682E6722E5420300705A23 /* CedarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD682E6622E5420300705A23 /* CedarTests.swift */; };
+		CD682E7222E5420300705A23 /* CedarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD682E7122E5420300705A23 /* CedarUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CD682E6322E5420300705A23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD682E4422E5420100705A23 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD682E4B22E5420100705A23;
+			remoteInfo = Cedar;
+		};
+		CD682E6E22E5420300705A23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD682E4422E5420100705A23 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD682E4B22E5420100705A23;
+			remoteInfo = Cedar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CD682E4C22E5420100705A23 /* Cedar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cedar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD682E4F22E5420100705A23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CD682E5122E5420100705A23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CD682E5322E5420100705A23 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CD682E5522E5420300705A23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD682E5822E5420300705A23 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CD682E5B22E5420300705A23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CD682E5D22E5420300705A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD682E6222E5420300705A23 /* CedarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CedarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD682E6622E5420300705A23 /* CedarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CedarTests.swift; sourceTree = "<group>"; };
+		CD682E6822E5420300705A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD682E6D22E5420300705A23 /* CedarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CedarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD682E7122E5420300705A23 /* CedarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CedarUITests.swift; sourceTree = "<group>"; };
+		CD682E7322E5420300705A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD682E4922E5420100705A23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD682E5F22E5420300705A23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD682E6A22E5420300705A23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CD682E4322E5420100705A23 = {
+			isa = PBXGroup;
+			children = (
+				CD682E4E22E5420100705A23 /* Cedar */,
+				CD682E6522E5420300705A23 /* CedarTests */,
+				CD682E7022E5420300705A23 /* CedarUITests */,
+				CD682E4D22E5420100705A23 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CD682E4D22E5420100705A23 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD682E4C22E5420100705A23 /* Cedar.app */,
+				CD682E6222E5420300705A23 /* CedarTests.xctest */,
+				CD682E6D22E5420300705A23 /* CedarUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD682E4E22E5420100705A23 /* Cedar */ = {
+			isa = PBXGroup;
+			children = (
+				CD682E4F22E5420100705A23 /* AppDelegate.swift */,
+				CD682E5122E5420100705A23 /* SceneDelegate.swift */,
+				CD682E5322E5420100705A23 /* ContentView.swift */,
+				CD682E5522E5420300705A23 /* Assets.xcassets */,
+				CD682E5A22E5420300705A23 /* LaunchScreen.storyboard */,
+				CD682E5D22E5420300705A23 /* Info.plist */,
+				CD682E5722E5420300705A23 /* Preview Content */,
+			);
+			path = Cedar;
+			sourceTree = "<group>";
+		};
+		CD682E5722E5420300705A23 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CD682E5822E5420300705A23 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CD682E6522E5420300705A23 /* CedarTests */ = {
+			isa = PBXGroup;
+			children = (
+				CD682E6622E5420300705A23 /* CedarTests.swift */,
+				CD682E6822E5420300705A23 /* Info.plist */,
+			);
+			path = CedarTests;
+			sourceTree = "<group>";
+		};
+		CD682E7022E5420300705A23 /* CedarUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CD682E7122E5420300705A23 /* CedarUITests.swift */,
+				CD682E7322E5420300705A23 /* Info.plist */,
+			);
+			path = CedarUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD682E4B22E5420100705A23 /* Cedar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD682E7622E5420300705A23 /* Build configuration list for PBXNativeTarget "Cedar" */;
+			buildPhases = (
+				CD682E4822E5420100705A23 /* Sources */,
+				CD682E4922E5420100705A23 /* Frameworks */,
+				CD682E4A22E5420100705A23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cedar;
+			productName = Cedar;
+			productReference = CD682E4C22E5420100705A23 /* Cedar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CD682E6122E5420300705A23 /* CedarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD682E7922E5420300705A23 /* Build configuration list for PBXNativeTarget "CedarTests" */;
+			buildPhases = (
+				CD682E5E22E5420300705A23 /* Sources */,
+				CD682E5F22E5420300705A23 /* Frameworks */,
+				CD682E6022E5420300705A23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD682E6422E5420300705A23 /* PBXTargetDependency */,
+			);
+			name = CedarTests;
+			productName = CedarTests;
+			productReference = CD682E6222E5420300705A23 /* CedarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CD682E6C22E5420300705A23 /* CedarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD682E7C22E5420300705A23 /* Build configuration list for PBXNativeTarget "CedarUITests" */;
+			buildPhases = (
+				CD682E6922E5420300705A23 /* Sources */,
+				CD682E6A22E5420300705A23 /* Frameworks */,
+				CD682E6B22E5420300705A23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD682E6F22E5420300705A23 /* PBXTargetDependency */,
+			);
+			name = CedarUITests;
+			productName = CedarUITests;
+			productReference = CD682E6D22E5420300705A23 /* CedarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD682E4422E5420100705A23 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "Patrick Mick";
+				TargetAttributes = {
+					CD682E4B22E5420100705A23 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					CD682E6122E5420300705A23 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = CD682E4B22E5420100705A23;
+					};
+					CD682E6C22E5420300705A23 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = CD682E4B22E5420100705A23;
+					};
+				};
+			};
+			buildConfigurationList = CD682E4722E5420100705A23 /* Build configuration list for PBXProject "Cedar" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD682E4322E5420100705A23;
+			productRefGroup = CD682E4D22E5420100705A23 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD682E4B22E5420100705A23 /* Cedar */,
+				CD682E6122E5420300705A23 /* CedarTests */,
+				CD682E6C22E5420300705A23 /* CedarUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD682E4A22E5420100705A23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD682E5C22E5420300705A23 /* LaunchScreen.storyboard in Resources */,
+				CD682E5922E5420300705A23 /* Preview Assets.xcassets in Resources */,
+				CD682E5622E5420300705A23 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD682E6022E5420300705A23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD682E6B22E5420300705A23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD682E4822E5420100705A23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD682E5022E5420100705A23 /* AppDelegate.swift in Sources */,
+				CD682E5222E5420100705A23 /* SceneDelegate.swift in Sources */,
+				CD682E5422E5420100705A23 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD682E5E22E5420300705A23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD682E6722E5420300705A23 /* CedarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD682E6922E5420300705A23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD682E7222E5420300705A23 /* CedarUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD682E6422E5420300705A23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD682E4B22E5420100705A23 /* Cedar */;
+			targetProxy = CD682E6322E5420300705A23 /* PBXContainerItemProxy */;
+		};
+		CD682E6F22E5420300705A23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD682E4B22E5420100705A23 /* Cedar */;
+			targetProxy = CD682E6E22E5420300705A23 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CD682E5A22E5420300705A23 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD682E5B22E5420300705A23 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CD682E7422E5420300705A23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CD682E7522E5420300705A23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD682E7722E5420300705A23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "Cedar/Preview\\ Content";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Cedar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.patrickmick.Cedar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CD682E7822E5420300705A23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "Cedar/Preview\\ Content";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Cedar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.patrickmick.Cedar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CD682E7A22E5420300705A23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CedarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.patrickmick.CedarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cedar.app/Cedar";
+			};
+			name = Debug;
+		};
+		CD682E7B22E5420300705A23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CedarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.patrickmick.CedarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cedar.app/Cedar";
+			};
+			name = Release;
+		};
+		CD682E7D22E5420300705A23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CedarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.patrickmick.CedarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Cedar;
+			};
+			name = Debug;
+		};
+		CD682E7E22E5420300705A23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CedarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.patrickmick.CedarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Cedar;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD682E4722E5420100705A23 /* Build configuration list for PBXProject "Cedar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD682E7422E5420300705A23 /* Debug */,
+				CD682E7522E5420300705A23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD682E7622E5420300705A23 /* Build configuration list for PBXNativeTarget "Cedar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD682E7722E5420300705A23 /* Debug */,
+				CD682E7822E5420300705A23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD682E7922E5420300705A23 /* Build configuration list for PBXNativeTarget "CedarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD682E7A22E5420300705A23 /* Debug */,
+				CD682E7B22E5420300705A23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD682E7C22E5420300705A23 /* Build configuration list for PBXNativeTarget "CedarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD682E7D22E5420300705A23 /* Debug */,
+				CD682E7E22E5420300705A23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD682E4422E5420100705A23 /* Project object */;
+}
