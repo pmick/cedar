@@ -2,13 +2,12 @@ import Foundation
 import SwiftUI
 
 struct Habit: Identifiable {
-    let id: String
+    let id = UUID()
     let title: String
     var completions: [HabitCompletion] = []
 }
 
 struct HabitCompletion: Identifiable {
-    let id: UUID = UUID()
+    let id = UUID()
     var date = Date()
 }
-

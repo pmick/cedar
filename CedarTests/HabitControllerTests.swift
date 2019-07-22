@@ -2,14 +2,14 @@ import XCTest
 
 @testable import Cedar
 
-class HabitControllerTests: XCTestCase {
+final class HabitControllerTests: XCTestCase {
     let sut = HabitController()
     
-    let noCompletionsHabit = Habit(id: "1", title: "Test", completions: [])
-    let completedLongAgoHabit = Habit(id: "1", title: "Test", completions: [HabitCompletion(date: Date(timeIntervalSince1970: 0))])
-    let completedTodayHabit = Habit(id: "1", title: "Test", completions: [HabitCompletion()])
-    let completedYesterdayHabit = Habit(id: "1", title: "Test", completions: [HabitCompletion(date: Date(timeIntervalSinceNow: -(24 * 60 * 60)))])
-    let completedNinetyDaysAgoHabit = Habit(id: "1", title: "Test", completions: [HabitCompletion(date: Date(timeIntervalSinceNow: -(24 * 60 * 60 * 90)))])
+    let noCompletionsHabit = Habit(title: "Test", completions: [])
+    let completedLongAgoHabit = Habit(title: "Test", completions: [HabitCompletion(date: Date(timeIntervalSince1970: 0))])
+    let completedTodayHabit = Habit(title: "Test", completions: [HabitCompletion()])
+    let completedYesterdayHabit = Habit(title: "Test", completions: [HabitCompletion(date: Date(timeIntervalSinceNow: -(24 * 60 * 60)))])
+    let completedNinetyDaysAgoHabit = Habit(title: "Test", completions: [HabitCompletion(date: Date(timeIntervalSinceNow: -(24 * 60 * 60 * 90)))])
     
     func testIsCompleted() {
         XCTAssertFalse(sut.isComplete(habit: noCompletionsHabit))

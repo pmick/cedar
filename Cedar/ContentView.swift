@@ -2,14 +2,14 @@ import SwiftUI
 
 struct ContentView: View {
     @State var habits: [Habit] = [
-        Habit(id: "1", title: "Workout", completions: [
+        Habit(title: "Workout", completions: [
             HabitCompletion(),
             HabitCompletion(date: Date(timeIntervalSinceNow: -(24 * 60 * 60 * 2))),
             HabitCompletion(date: Date(timeIntervalSinceNow: -(24 * 60 * 60 * 3))),
             HabitCompletion(date: Date(timeIntervalSinceNow: -(24 * 60 * 60 * 4)))
         ]),
-        Habit(id: "2", title: "Drink 60 ounces of water"),
-        Habit(id: "3", title: "Meditate")
+        Habit(title: "Drink 60 ounces of water"),
+        Habit(title: "Meditate")
     ]
     
     var body: some View {
@@ -94,16 +94,24 @@ struct HabitRowView: View {
 }
 
 struct AddButton: View {
+    @State var shown = false
+
     var body: some View {
-        ZStack {
-            Circle()
-                .foregroundColor(.white)
-                .frame(width: 72, height: 72)
-                .shadow(color: Color(.sRGB, white: 0, opacity: 0.08), radius: 30)
-            
-            Image(systemName: "plus")
-                .font(.largeTitle)
-                .foregroundColor(Color(.sRGB, white: 0.33, opacity: 1))
+        Button(action: {
+            self.shown.toggle()
+        }) {
+            ZStack {
+                Circle()
+                    .foregroundColor(.white)
+                    .frame(width: 72, height: 72)
+                    .shadow(color: Color(.sRGB, white: 0, opacity: 0.08), radius: 30)
+                
+                Image(systemName: "plus")
+                    .font(.largeTitle)
+                    .foregroundColor(Color(.sRGB, white: 0.33, opacity: 1))
+            }
+        }.sheet(isPresented: $shown) {
+            return NewHabitView()
         }
     }
 }
