@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD3BC5A122E56D6800896FE7 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC5A022E56D6800896FE7 /* Models.swift */; };
+		CD3BC5A322E56E3700896FE7 /* HabitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC5A222E56E3700896FE7 /* HabitController.swift */; };
+		CD3BC5A522E56EAB00896FE7 /* HabitControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC5A422E56EAB00896FE7 /* HabitControllerTests.swift */; };
 		CD682E5022E5420100705A23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD682E4F22E5420100705A23 /* AppDelegate.swift */; };
 		CD682E5222E5420100705A23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD682E5122E5420100705A23 /* SceneDelegate.swift */; };
 		CD682E5422E5420100705A23 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD682E5322E5420100705A23 /* ContentView.swift */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD3BC5A022E56D6800896FE7 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Models.swift; path = ../../../../../System/Volumes/Data/Users/patrickmick/Desktop/Cedar/Cedar/Models.swift; sourceTree = "<group>"; };
+		CD3BC5A222E56E3700896FE7 /* HabitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HabitController.swift; path = ../../../../../System/Volumes/Data/Users/patrickmick/Desktop/Cedar/Cedar/HabitController.swift; sourceTree = "<group>"; };
+		CD3BC5A422E56EAB00896FE7 /* HabitControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HabitControllerTests.swift; path = ../../../../../System/Volumes/Data/Users/patrickmick/Desktop/Cedar/CedarTests/HabitControllerTests.swift; sourceTree = "<group>"; };
 		CD682E4C22E5420100705A23 /* Cedar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cedar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD682E4F22E5420100705A23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD682E5122E5420100705A23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +112,8 @@
 				CD682E5A22E5420300705A23 /* LaunchScreen.storyboard */,
 				CD682E5D22E5420300705A23 /* Info.plist */,
 				CD682E5722E5420300705A23 /* Preview Content */,
+				CD3BC5A022E56D6800896FE7 /* Models.swift */,
+				CD3BC5A222E56E3700896FE7 /* HabitController.swift */,
 			);
 			path = Cedar;
 			sourceTree = "<group>";
@@ -123,6 +131,7 @@
 			children = (
 				CD682E6622E5420300705A23 /* CedarTests.swift */,
 				CD682E6822E5420300705A23 /* Info.plist */,
+				CD3BC5A422E56EAB00896FE7 /* HabitControllerTests.swift */,
 			);
 			path = CedarTests;
 			sourceTree = "<group>";
@@ -269,7 +278,9 @@
 			files = (
 				CD682E5022E5420100705A23 /* AppDelegate.swift in Sources */,
 				CD682E5222E5420100705A23 /* SceneDelegate.swift in Sources */,
+				CD3BC5A322E56E3700896FE7 /* HabitController.swift in Sources */,
 				CD682E5422E5420100705A23 /* ContentView.swift in Sources */,
+				CD3BC5A122E56D6800896FE7 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3BC5A522E56EAB00896FE7 /* HabitControllerTests.swift in Sources */,
 				CD682E6722E5420300705A23 /* CedarTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
