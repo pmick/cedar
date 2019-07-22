@@ -43,6 +43,7 @@ struct ContentView_Previews: PreviewProvider {
 #endif
 
 struct HabitRowView: View {
+    private let habitController = HabitController()
     @State var habit: Habit
     
     var body: some View {
@@ -58,7 +59,7 @@ struct HabitRowView: View {
                         .foregroundColor(Color(.sRGB, white: 0.33, opacity: 1))
                     Spacer()
                     Button(action: {
-                        if self.habit.isComplete {
+                        if self.habitController.isComplete(habit: self.habit) {
                             self.habit.completions.remove(at: 0)
                         } else {
                             self.habit.completions.insert(HabitCompletion(), at: 0)
@@ -66,7 +67,7 @@ struct HabitRowView: View {
                     }) {
                         ZStack {
                             Circle()
-                                .foregroundColor(habit.isComplete ? Color.green : Color(.sRGB, white: 0, opacity: 0.10))
+                                .foregroundColor(habitController.isComplete(habit: habit) ? Color.green : Color(.sRGB, white: 0, opacity: 0.10))
                                 .frame(width: 44, height: 44)
                             Image(systemName: "checkmark")
                                 .font(.headline)
@@ -79,7 +80,7 @@ struct HabitRowView: View {
                     HStack {
                         ForEach(0..<5) { idx in
                             Circle()
-                                .foregroundColor(self.habit.wasCompleted(daysAgo: 4 - idx) ? Color.green : Color(.sRGB, white: 0, opacity: 0.10))
+                                .foregroundColor(self.habitController.wasCompleted(daysAgo: 4 - idx, habit: self.habit) ? Color.green : Color(.sRGB, white: 0, opacity: 0.10))
                                 .frame(width: 6, height: 6)
                         }
                     }
@@ -102,7 +103,6 @@ struct AddButton: View {
             
             Image(systemName: "plus")
                 .font(.largeTitle)
-//                .background(LinearGradient(gradient: Gradient(colors: [.red, .orange, .yellow]), startPoint: .topLeading, endPoint: .bottomTrailing))
                 .foregroundColor(Color(.sRGB, white: 0.33, opacity: 1))
         }
     }

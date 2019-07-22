@@ -16,7 +16,6 @@
 		CD682E5622E5420300705A23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD682E5522E5420300705A23 /* Assets.xcassets */; };
 		CD682E5922E5420300705A23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD682E5822E5420300705A23 /* Preview Assets.xcassets */; };
 		CD682E5C22E5420300705A23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD682E5A22E5420300705A23 /* LaunchScreen.storyboard */; };
-		CD682E6722E5420300705A23 /* CedarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD682E6622E5420300705A23 /* CedarTests.swift */; };
 		CD682E7222E5420300705A23 /* CedarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD682E7122E5420300705A23 /* CedarUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +49,6 @@
 		CD682E5B22E5420300705A23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD682E5D22E5420300705A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD682E6222E5420300705A23 /* CedarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CedarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD682E6622E5420300705A23 /* CedarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CedarTests.swift; sourceTree = "<group>"; };
 		CD682E6822E5420300705A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD682E6D22E5420300705A23 /* CedarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CedarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD682E7122E5420300705A23 /* CedarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CedarUITests.swift; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 		CD682E6522E5420300705A23 /* CedarTests */ = {
 			isa = PBXGroup;
 			children = (
-				CD682E6622E5420300705A23 /* CedarTests.swift */,
 				CD682E6822E5420300705A23 /* Info.plist */,
 				CD3BC5A422E56EAB00896FE7 /* HabitControllerTests.swift */,
 			);
@@ -289,7 +286,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD3BC5A522E56EAB00896FE7 /* HabitControllerTests.swift in Sources */,
-				CD682E6722E5420300705A23 /* CedarTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
