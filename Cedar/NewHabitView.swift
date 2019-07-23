@@ -9,8 +9,44 @@
 import SwiftUI
 
 struct NewHabitView: View {
+    @State var title: String = ""
+    @State var why: String = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                HStack {
+                    Text("Title")
+                        .fontWeight(.bold)
+                    TextField("Title", text: $title)
+                }
+                HStack {
+                    Text("Why")
+                        .fontWeight(.bold)
+                    TextField("Why", text: $why)
+                }
+                Spacer()
+            }
+            .padding()
+            .navigationBarTitle("Add Habit")
+            .navigationBarItems(
+                leading:
+                Button(action: {
+                    print("Cancel tapped")
+                }, label: {
+                    Text("Cancel")
+                        .foregroundColor(.green)
+                }),
+                trailing:
+                Button(action: {
+                    print("Add tapped")
+                }, label: {
+                    Text("Add")
+                        .foregroundColor(.green)
+                        .fontWeight(.bold)
+                })
+            )
+        }
     }
 }
 

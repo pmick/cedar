@@ -19,7 +19,7 @@ struct ContentView: View {
                     Text("cedar")
                         .font(.title)
                         .fontWeight(.bold)
-                        .foregroundColor(Color(.sRGB, white: 0.33, opacity: 1))
+                        .foregroundColor(.green)
                     ForEach(habits) { habit in
                         HabitRowView(habit: habit)
                     }
@@ -108,7 +108,7 @@ struct AddButton: View {
                 
                 Image(systemName: "plus")
                     .font(.largeTitle)
-                    .foregroundColor(Color(.sRGB, white: 0.33, opacity: 1))
+                    .foregroundColor(.green)
             }
         }.sheet(isPresented: $shown) {
             return NewHabitView()
