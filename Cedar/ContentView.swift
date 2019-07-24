@@ -111,7 +111,7 @@ struct AddButton: View {
                     .foregroundColor(.green)
             }
         }.sheet(isPresented: $shown) {
-            return NewHabitView()
+            return NewHabitView(shown: self.$shown)
         }
     }
 }

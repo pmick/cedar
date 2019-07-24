@@ -9,22 +9,20 @@
 import SwiftUI
 
 struct NewHabitView: View {
+    @Binding var shown: Bool
+    
     @State var title: String = ""
     @State var why: String = ""
+    
+    var isFormComplete: Bool {
+        return !title.isEmpty && !why.isEmpty
+    }
     
     var body: some View {
         NavigationView {
             VStack {
-                HStack {
-                    Text("Title")
-                        .fontWeight(.bold)
-                    TextField("Title", text: $title)
-                }
-                HStack {
-                    Text("Why")
-                        .fontWeight(.bold)
-                    TextField("Why", text: $why)
-                }
+                EntryFieldView(title: "Title", binding: $title)
+                EntryFieldView(title: "Why", binding: $why)
                 Spacer()
             }
             .padding()
@@ -32,19 +30,20 @@ struct NewHabitView: View {
             .navigationBarItems(
                 leading:
                 Button(action: {
-                    print("Cancel tapped")
+                    self.shown = false
                 }, label: {
                     Text("Cancel")
                         .foregroundColor(.green)
                 }),
                 trailing:
                 Button(action: {
-                    print("Add tapped")
+                    // update state
+                    self.shown = false
                 }, label: {
                     Text("Add")
-                        .foregroundColor(.green)
+                        .foregroundColor(isFormComplete ? Color.green : Color.green.opacity(0.3))
                         .fontWeight(.bold)
-                })
+                }).disabled(!isFormComplete)
             )
         }
     }
@@ -53,7 +52,21 @@ struct NewHabitView: View {
 #if DEBUG
 struct NewHabitView_Previews: PreviewProvider {
     static var previews: some View {
-        NewHabitView()
+        NewHabitView(shown: Binding<Bool>(getValue: { return true }, setValue: { _ in }))
     }
 }
 #endif
+
+struct EntryFieldView: View {
+    let title: String
+    @Binding var binding: String
+    
+    var body: some View {
+        HStack {
+            Text(title)
+                .fontWeight(.bold)
+                .baselineOffset(2.0)
+            TextField(title, text: $binding)
+        }
+    }
+}
