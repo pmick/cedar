@@ -1,16 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var habits: [Habit] = [
-        Habit(title: "Workout", completions: [
-            HabitCompletion(),
-            HabitCompletion(date: Date(timeIntervalSinceNow: -(24 * 60 * 60 * 2))),
-            HabitCompletion(date: Date(timeIntervalSinceNow: -(24 * 60 * 60 * 3))),
-            HabitCompletion(date: Date(timeIntervalSinceNow: -(24 * 60 * 60 * 4)))
-        ]),
-        Habit(title: "Drink 60 ounces of water"),
-        Habit(title: "Meditate")
-    ]
+    @ObjectBinding var habitsManager = HabitsManager()
     
     var body: some View {
         ZStack {
@@ -20,7 +11,7 @@ struct ContentView: View {
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(.green)
-                    ForEach(habits) { habit in
+                    ForEach(habitsManager.habits) { habit in
                         HabitRowView(habit: habit)
                     }
                 }
@@ -28,7 +19,7 @@ struct ContentView: View {
             }
             VStack {
                 Spacer()
-                AddButton()
+                AddButton(habitsManager: habitsManager)
             }
         }
     }
@@ -94,6 +85,7 @@ struct HabitRowView: View {
 }
 
 struct AddButton: View {
+    @ObjectBinding var habitsManager: HabitsManager
     @State var shown = false
 
     var body: some View {
@@ -111,7 +103,7 @@ struct AddButton: View {
                     .foregroundColor(.green)
             }
         }.sheet(isPresented: $shown) {
-            return NewHabitView(shown: self.$shown)
+            return NewHabitView(habitsManager: self.habitsManager, shown: self.$shown)
         }
     }
 }
