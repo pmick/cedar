@@ -13,8 +13,8 @@ struct ContentView: View {
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(.green)
-                    ForEach(habitsStore.habits, id: \.self) { habit in
-                        HabitRowView(habit: habit)
+                    ForEach(habitsStore.habits) { habit in
+                        HabitRowView(habitsStore: self.habitsStore, habit: habit)
                     }
                 }
                 .padding(.top, 16)
@@ -39,7 +39,8 @@ struct HabitRowView: View {
 //    private let habitController = HabitController()
 //    @State var habit: Habit
 //    let habitsManager: HabitsManager
-    let habit: Habit
+    let habitsStore: HabitsStore
+    let habit: HabitViewModel
     
     var body: some View {
         ZStack {
@@ -48,11 +49,12 @@ struct HabitRowView: View {
                 .shadow(color: Color(.sRGB, white: 0, opacity: 0.1), radius: 10)
             VStack {
                 HStack {
-                    Text(habit.title!)
+                    Text(habit.title)
                         .font(.headline)
                         .foregroundColor(Color(.sRGB, white: 0.33, opacity: 1))
                     Spacer()
                     Button(action: {
+                        self.habitsStore.complete(habitWithId: self.habit.id)
 //                        if self.habitController.isComplete(habit: self.habit) {
 //                            self.habitsManager.uncomplete(habit)
 ////                            self.habit.completions.remove(at: 0)
@@ -62,7 +64,7 @@ struct HabitRowView: View {
                     }) {
                         ZStack {
                             Circle()
-                                .foregroundColor(/*habitController.isComplete(habit: habit) ? Color.green : */Color(.sRGB, white: 0, opacity: 0.10))
+                                .foregroundColor(habit.isComplete ? Color.green : Color(.sRGB, white: 0, opacity: 0.10))
                                 .frame(width: 44, height: 44)
                             Image(systemName: "checkmark")
                                 .font(.headline)

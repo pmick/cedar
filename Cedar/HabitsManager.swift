@@ -1,89 +1,36 @@
 import Combine
 import CoreData
 import SwiftUI
-//
-//final class HabitsStore {
-//    func writeToDisk(_ habits: [Habit]) {
-//        do {
-//            let data = try JSONEncoder().encode(habits)
-//            let fileManager = FileManager.default
-//            let documentsUrl = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-//            let fileUrl = documentsUrl.appendingPathComponent("habits.json")
-//            
-//            try data.write(to: fileUrl)
-//        } catch {
-//            print("error writing habits to disk")
-//        }
-//    }
-//    
-//    func readHabits() -> [Habit] {
-//        do {
-//            let fileManager = FileManager.default
-//            let documentsUrl = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-//            let fileUrl = documentsUrl.appendingPathComponent("habits.json")
-//            let data = try Data(contentsOf: fileUrl)
-//            let decoded = try JSONDecoder().decode([Habit].self, from: data)
-//            return decoded
-//        } catch {
-//            print("error reading", error)
-//            return []
-//        }
-//    }
-//}
-//
-//final class HabitsManager: BindableObject {
-//    private let store = HabitsStore()
-//    
-//    var willChange = PassthroughSubject<Void, Never>()
-//    
-//    // init read from disk
-//    
-//    var habits: [Habit] = [
-//        Habit(title: "Workout", completions: [
-//            HabitCompletion(),
-//            HabitCompletion(date: Date(timeIntervalSinceNow: -(24 * 60 * 60 * 2))),
-//            HabitCompletion(date: Date(timeIntervalSinceNow: -(24 * 60 * 60 * 3))),
-//            HabitCompletion(date: Date(timeIntervalSinceNow: -(24 * 60 * 60 * 4)))
-//        ]),
-//        Habit(title: "Drink 60 ounces of water"),
-//        Habit(title: "Meditate")
-//        ] {
-//        willSet {
-//            willChange.send(())
-//        }
-//        didSet {
-//            store.writeToDisk(habits)
-//            // write to disk?
-//        }
-//    }
-//    
-//    func complete(_ habit: Habit) {
-//        var copy = habits
-//    }
-//    
-//    func uncomplete(_ habit: Habit) {
-//        
-//    }
-//}
 
-final class HabitsStore: BindableObject {
+struct HabitViewModel: Identifiable {
+    let id: NSManagedObjectID
+    
+    let title: String
+    let isComplete: Bool
+    
+    init?(habit: Habit) {
+        guard let title = habit.title else { return nil }
+        let completions = habit.completions
+        self.id = habit.objectID
+        self.title = title
+        self.isComplete = true
+    }
+}
+
+final class HabitsStore: NSObject, BindableObject, NSFetchedResultsControllerDelegate {
     var willChange = PassthroughSubject<Void, Never>()
     
-    var habits: [Habit] {
-        do {
-            let request: NSFetchRequest<Habit> = Habit.fetchRequest()
-            let result = try persistentContainer.viewContext.fetch(request)
-            return result
-        } catch {
-            print("Error fetching habits", error)
-            return []
-        }
+    var habits: [HabitViewModel] {
+        let habits = fetchedResultsController.fetchedObjects ?? []
+        let viewModels = habits.compactMap(HabitViewModel.init)
+        return viewModels
     }
     
     func createHabit(with title: String) {
         persistentContainer.performBackgroundTask { (context) in
             let habit = Habit(context: context)
             habit.title = title
+            habit.createdAt = Date()
             
             do {
                 try context.save()
@@ -91,6 +38,40 @@ final class HabitsStore: BindableObject {
                 print("Error saving habit", error)
             }
         }
+    }
+    
+    func complete(habitWithId habitId: NSManagedObjectID) {
+        persistentContainer.performBackgroundTask { (context) in
+            let completion = HabitCompletion(context: context)
+            completion.date = Date()
+            
+            let habit = context.object(with: habitId) as! Habit
+            habit.addToCompletions(completion)
+            
+            do {
+                try context.save()
+            } catch {
+                print("Error saving completion", error)
+            }
+        }
+    }
+    
+    override init() {
+        super.init()
+        
+        try? self.fetchedResultsController.performFetch()
+    }
+    
+    lazy var fetchedResultsController: NSFetchedResultsController<Habit> = {
+        let request: NSFetchRequest<Habit> = Habit.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: true)]
+        let frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        frc.delegate = self
+        return frc
+    }()
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        willChange.send(())
     }
     
     // MARK: - Core Data stack
@@ -113,6 +94,7 @@ final class HabitsStore: BindableObject {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+        container.viewContext.automaticallyMergesChangesFromParent = true
         return container
     }()
     
