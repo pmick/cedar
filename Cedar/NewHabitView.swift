@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct NewHabitView: View {
-    @ObjectBinding var habitsManager: HabitsManager
+//    @ObjectBinding var habitsManager: HabitsManager
+    let habitsStore: HabitsStore
 
     @Binding var shown: Bool
     
@@ -40,7 +41,8 @@ struct NewHabitView: View {
                 trailing:
                 Button(action: {
                     // update state
-                    self.habitsManager.habits.append(Habit(title: self.title))
+                    self.habitsStore.createHabit(with: self.title)
+//                    self.habitsManager.habits.append(Habit(title: self.title))
                     self.shown = false
                 }, label: {
                     Text("Add")
@@ -55,7 +57,7 @@ struct NewHabitView: View {
 #if DEBUG
 struct NewHabitView_Previews: PreviewProvider {
     static var previews: some View {
-        NewHabitView(habitsManager: HabitsManager(), shown: Binding<Bool>(getValue: { return true }, setValue: { _ in }))
+        NewHabitView(habitsStore: HabitsStore(), shown: Binding<Bool>(getValue: { return true }, setValue: { _ in }))
     }
 }
 #endif

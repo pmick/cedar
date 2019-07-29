@@ -1,7 +1,9 @@
+import Combine
+//import CoreData
 import SwiftUI
 
 struct ContentView: View {
-    @ObjectBinding var habitsManager = HabitsManager()
+    @ObjectBinding var habitsStore = HabitsStore()
     
     var body: some View {
         ZStack {
@@ -11,7 +13,7 @@ struct ContentView: View {
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(.green)
-                    ForEach(habitsManager.habits) { habit in
+                    ForEach(habitsStore.habits, id: \.self) { habit in
                         HabitRowView(habit: habit)
                     }
                 }
@@ -19,7 +21,7 @@ struct ContentView: View {
             }
             VStack {
                 Spacer()
-                AddButton(habitsManager: habitsManager)
+                AddButton(/*habitsManager: habitsManager*/habitsStore: habitsStore)
             }
         }
     }
@@ -34,31 +36,33 @@ struct ContentView_Previews: PreviewProvider {
 #endif
 
 struct HabitRowView: View {
-    private let habitController = HabitController()
-    @State var habit: Habit
+//    private let habitController = HabitController()
+//    @State var habit: Habit
+//    let habitsManager: HabitsManager
+    let habit: Habit
     
     var body: some View {
         ZStack {
-            Rectangle()
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
                 .foregroundColor(.white)
-                .cornerRadius(8)
                 .shadow(color: Color(.sRGB, white: 0, opacity: 0.1), radius: 10)
             VStack {
                 HStack {
-                    Text(habit.title)
+                    Text(habit.title!)
                         .font(.headline)
                         .foregroundColor(Color(.sRGB, white: 0.33, opacity: 1))
                     Spacer()
                     Button(action: {
-                        if self.habitController.isComplete(habit: self.habit) {
-                            self.habit.completions.remove(at: 0)
-                        } else {
-                            self.habit.completions.insert(HabitCompletion(), at: 0)
-                        }
+//                        if self.habitController.isComplete(habit: self.habit) {
+//                            self.habitsManager.uncomplete(habit)
+////                            self.habit.completions.remove(at: 0)
+//                        } else {
+//                           self.habitsManager.complete(habit)
+//                        }
                     }) {
                         ZStack {
                             Circle()
-                                .foregroundColor(habitController.isComplete(habit: habit) ? Color.green : Color(.sRGB, white: 0, opacity: 0.10))
+                                .foregroundColor(/*habitController.isComplete(habit: habit) ? Color.green : */Color(.sRGB, white: 0, opacity: 0.10))
                                 .frame(width: 44, height: 44)
                             Image(systemName: "checkmark")
                                 .font(.headline)
@@ -71,7 +75,7 @@ struct HabitRowView: View {
                     HStack {
                         ForEach(0..<5) { idx in
                             Circle()
-                                .foregroundColor(self.habitController.wasCompleted(daysAgo: 4 - idx, habit: self.habit) ? Color.green : Color(.sRGB, white: 0, opacity: 0.10))
+                                .foregroundColor(/*self.habitController.wasCompleted(daysAgo: 4 - idx, habit: self.habit) ? Color.green : */Color(.sRGB, white: 0, opacity: 0.10))
                                 .frame(width: 6, height: 6)
                         }
                     }
@@ -85,7 +89,8 @@ struct HabitRowView: View {
 }
 
 struct AddButton: View {
-    @ObjectBinding var habitsManager: HabitsManager
+    let habitsStore: HabitsStore
+//    @ObjectBinding var habitsManager: HabitsManager
     @State var shown = false
 
     var body: some View {
@@ -103,7 +108,7 @@ struct AddButton: View {
                     .foregroundColor(.green)
             }
         }.sheet(isPresented: $shown) {
-            return NewHabitView(habitsManager: self.habitsManager, shown: self.$shown)
+            return NewHabitView(habitsStore: self.habitsStore, shown: self.$shown)
         }
     }
 }
