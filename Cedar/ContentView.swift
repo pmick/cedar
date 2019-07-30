@@ -77,7 +77,7 @@ struct HabitRowView: View {
                     HStack {
                         ForEach(0..<5) { idx in
                             Circle()
-                                .foregroundColor(/*self.habitController.wasCompleted(daysAgo: 4 - idx, habit: self.habit) ? Color.green : */Color(.sRGB, white: 0, opacity: 0.10))
+                                .foregroundColor(self.habit.completionDaysAgo.contains(4 - idx) ? Color.green : Color(.sRGB, white: 0, opacity: 0.10))
                                 .frame(width: 6, height: 6)
                         }
                     }

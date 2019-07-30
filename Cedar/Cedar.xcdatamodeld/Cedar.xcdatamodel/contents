@@ -6,7 +6,7 @@
         <relationship name="completions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="HabitCompletion"/>
     </entity>
     <entity name="HabitCompletion" representedClassName="HabitCompletion" syncable="YES" codeGenerationType="class">
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
         <fetchIndex name="byDateIndex">
             <fetchIndexElement property="date" type="Binary" order="ascending"/>
         </fetchIndex>

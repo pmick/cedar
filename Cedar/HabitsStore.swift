@@ -2,18 +2,39 @@ import Combine
 import CoreData
 import SwiftUI
 
+// from: https://stackoverflow.com/questions/40075850/swift-3-find-number-of-calendar-days-between-two-dates
+extension Date {
+    func interval(ofComponent comp: Calendar.Component, fromDate date: Date) -> Int {
+        
+        let currentCalendar = Calendar.current
+        
+        guard let start = currentCalendar.ordinality(of: comp, in: .era, for: date) else { return 0 }
+        guard let end = currentCalendar.ordinality(of: comp, in: .era, for: self) else { return 0 }
+        
+        return end - start
+    }
+}
+
 struct HabitViewModel: Identifiable {
     let id: NSManagedObjectID
     
     let title: String
     let isComplete: Bool
+    let completionDaysAgo: Set<Int>
     
     init?(habit: Habit) {
         guard let title = habit.title else { return nil }
-        let completions = habit.completions
+        guard let completions = habit.completions?.allObjects as? [HabitCompletion] else { return nil }
+        
+        // This probably won't scale to many completions, but it works 🤷‍♂️
+        let daysAgoSet = Set(completions.compactMap { completion -> Int? in
+            return Date().interval(ofComponent: .day, fromDate: completion.date!)
+        })
+        
+        self.isComplete = daysAgoSet.contains(0)
+        self.completionDaysAgo = daysAgoSet
         self.id = habit.objectID
         self.title = title
-        self.isComplete = true
     }
 }
 
