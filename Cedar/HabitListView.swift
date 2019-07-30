@@ -2,7 +2,7 @@ import Combine
 //import CoreData
 import SwiftUI
 
-struct ContentView: View {
+struct HabitListView: View {
     @ObjectBinding var habitsStore = HabitsStore()
     
     var body: some View {
@@ -28,9 +28,9 @@ struct ContentView: View {
 }
 
 #if DEBUG
-struct ContentView_Previews: PreviewProvider {
+struct HabitListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HabitListView()
     }
 }
 #endif
