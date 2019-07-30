@@ -1,15 +1,6 @@
-//
-//  NewHabitView.swift
-//  Cedar
-//
-//  Created by Patrick Mick on 7/21/19.
-//  Copyright © 2019 Patrick Mick. All rights reserved.
-//
-
 import SwiftUI
 
 struct NewHabitView: View {
-//    @ObjectBinding var habitsManager: HabitsManager
     let habitsStore: HabitsStore
 
     @Binding var shown: Bool
@@ -40,9 +31,7 @@ struct NewHabitView: View {
                 }),
                 trailing:
                 Button(action: {
-                    // update state
                     self.habitsStore.createHabit(with: self.title)
-//                    self.habitsManager.habits.append(Habit(title: self.title))
                     self.shown = false
                 }, label: {
                     Text("Add")

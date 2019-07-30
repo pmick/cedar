@@ -36,9 +36,6 @@ struct ContentView_Previews: PreviewProvider {
 #endif
 
 struct HabitRowView: View {
-//    private let habitController = HabitController()
-//    @State var habit: Habit
-//    let habitsManager: HabitsManager
     let habitsStore: HabitsStore
     let habit: HabitViewModel
     
@@ -55,12 +52,6 @@ struct HabitRowView: View {
                     Spacer()
                     Button(action: {
                         self.habitsStore.complete(habitWithId: self.habit.id)
-//                        if self.habitController.isComplete(habit: self.habit) {
-//                            self.habitsManager.uncomplete(habit)
-////                            self.habit.completions.remove(at: 0)
-//                        } else {
-//                           self.habitsManager.complete(habit)
-//                        }
                     }) {
                         ZStack {
                             Circle()
@@ -92,7 +83,6 @@ struct HabitRowView: View {
 
 struct AddButton: View {
     let habitsStore: HabitsStore
-//    @ObjectBinding var habitsManager: HabitsManager
     @State var shown = false
 
     var body: some View {

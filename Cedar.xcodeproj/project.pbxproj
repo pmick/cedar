@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD3BC5A122E56D6800896FE7 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC5A022E56D6800896FE7 /* Models.swift */; };
 		CD3BC5A522E56EAB00896FE7 /* HabitsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC5A422E56EAB00896FE7 /* HabitsStoreTests.swift */; };
 		CD3BC5A722E572EA00896FE7 /* NewHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC5A622E572EA00896FE7 /* NewHabitView.swift */; };
 		CD505E5922E80D400009580B /* HabitsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD505E5822E80D400009580B /* HabitsStore.swift */; };
@@ -39,7 +38,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CD3BC5A022E56D6800896FE7 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Models.swift; path = ../../../../../System/Volumes/Data/Users/patrickmick/Desktop/Cedar/Cedar/Models.swift; sourceTree = "<group>"; };
 		CD3BC5A422E56EAB00896FE7 /* HabitsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HabitsStoreTests.swift; path = ../../../../../System/Volumes/Data/Users/patrickmick/Desktop/Cedar/CedarTests/HabitsStoreTests.swift; sourceTree = "<group>"; };
 		CD3BC5A622E572EA00896FE7 /* NewHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewHabitView.swift; path = ../../../../../System/Volumes/Data/Users/patrickmick/Desktop/Cedar/Cedar/NewHabitView.swift; sourceTree = "<group>"; };
 		CD505E5822E80D400009580B /* HabitsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HabitsStore.swift; path = ../../../../../System/Volumes/Data/Users/patrickmick/Desktop/Cedar/Cedar/HabitsStore.swift; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 				CD682E4F22E5420100705A23 /* AppDelegate.swift */,
 				CD682E5122E5420100705A23 /* SceneDelegate.swift */,
 				CD682E5322E5420100705A23 /* ContentView.swift */,
-				CD3BC5A022E56D6800896FE7 /* Models.swift */,
 				CD505E5822E80D400009580B /* HabitsStore.swift */,
 				CDDC455E22EE90B0009DF238 /* Cedar.xcdatamodeld */,
 				CD682E5522E5420300705A23 /* Assets.xcassets */,
@@ -285,7 +282,6 @@
 				CD682E5222E5420100705A23 /* SceneDelegate.swift in Sources */,
 				CD505E5922E80D400009580B /* HabitsStore.swift in Sources */,
 				CD682E5422E5420100705A23 /* ContentView.swift in Sources */,
-				CD3BC5A122E56D6800896FE7 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
