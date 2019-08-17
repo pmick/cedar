@@ -17,6 +17,7 @@
 		CD682E5922E5420300705A23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD682E5822E5420300705A23 /* Preview Assets.xcassets */; };
 		CD682E5C22E5420300705A23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD682E5A22E5420300705A23 /* LaunchScreen.storyboard */; };
 		CD682E7222E5420300705A23 /* CedarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD682E7122E5420300705A23 /* CedarUITests.swift */; };
+		CDA17DA423087BB600A7C6A0 /* HabitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA17DA323087BB600A7C6A0 /* HabitDetailView.swift */; };
 		CDDC456022EE90B0009DF238 /* Cedar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CDDC455E22EE90B0009DF238 /* Cedar.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		CD682E6D22E5420300705A23 /* CedarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CedarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD682E7122E5420300705A23 /* CedarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CedarUITests.swift; sourceTree = "<group>"; };
 		CD682E7322E5420300705A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDA17DA323087BB600A7C6A0 /* HabitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailView.swift; sourceTree = "<group>"; };
 		CDDC455F22EE90B0009DF238 /* Cedar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cedar.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 				CD682E5122E5420100705A23 /* SceneDelegate.swift */,
 				CD682E5322E5420100705A23 /* HabitListView.swift */,
 				CD3BC5A622E572EA00896FE7 /* NewHabitView.swift */,
+				CDA17DA323087BB600A7C6A0 /* HabitDetailView.swift */,
 				CD505E5822E80D400009580B /* HabitsStore.swift */,
 				CDDC455E22EE90B0009DF238 /* Cedar.xcdatamodeld */,
 				CD682E5522E5420300705A23 /* Assets.xcassets */,
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDA17DA423087BB600A7C6A0 /* HabitDetailView.swift in Sources */,
 				CD3BC5A722E572EA00896FE7 /* NewHabitView.swift in Sources */,
 				CDDC456022EE90B0009DF238 /* Cedar.xcdatamodeld in Sources */,
 				CD682E5022E5420100705A23 /* AppDelegate.swift in Sources */,

@@ -17,7 +17,6 @@ extension Date {
 
 struct HabitViewModel: Identifiable {
     let id: NSManagedObjectID
-    
     let title: String
     let isComplete: Bool
     let completionDaysAgo: Set<Int>
@@ -38,8 +37,92 @@ struct HabitViewModel: Identifiable {
     }
 }
 
-final class HabitsStore: NSObject, BindableObject, NSFetchedResultsControllerDelegate {
-    var willChange = PassthroughSubject<Void, Never>()
+/// Subclasses should implement main, and not call super. Super will switch `state` to executing.
+/// When you're finished with async work, switch the operation `state` to `.finished`.
+/// Finally, when switching threads or between subtasks check if the operation is cancelled. If it is switch the state to `.finished` and return.
+class AsyncOperation: Operation {
+    enum State {
+        case waiting
+        case executing
+        case finished
+        
+        var kvoKey: String? {
+            switch self {
+            case .executing: return "isExecuting"
+            case .finished: return "isFinished"
+            default: return nil
+            }
+        }
+    }
+    
+    var state: State = .waiting {
+        willSet {
+            if let kvoKey = state.kvoKey { willChangeValue(forKey: kvoKey) }
+            if let kvoKey = newValue.kvoKey { willChangeValue(forKey: kvoKey) }
+        }
+        didSet {
+            if let kvoKey = oldValue.kvoKey { didChangeValue(forKey: kvoKey) }
+            if let kvoKey = state.kvoKey { didChangeValue(forKey: kvoKey) }
+        }
+    }
+    
+    override var isAsynchronous: Bool { return true }
+    override var isExecuting: Bool { return state == .executing }
+    override var isFinished: Bool { return state == .finished }
+    
+    override func start() {
+        guard !isCancelled else { state = .finished; return }
+        state = .executing
+        main()
+    }
+}
+
+final class ToggleHabitCompleteOperation: AsyncOperation {
+    let persistentContainer: NSPersistentContainer
+    let habitId: NSManagedObjectID
+    
+    init(persistentContainer: NSPersistentContainer, habitId: NSManagedObjectID) {
+        self.persistentContainer = persistentContainer
+        self.habitId = habitId
+    }
+    
+    override func main() {
+        persistentContainer.performBackgroundTask { context in
+            guard !self.isCancelled else { self.state = .finished; return }
+            guard let habit = context.object(with: self.habitId) as? Habit else { self.state = .finished; return }
+
+            let startOfToday = Calendar.current.startOfDay(for: Date())
+            let request: NSFetchRequest<HabitCompletion> = HabitCompletion.fetchRequest()
+            request.predicate = NSPredicate(format: "habit == %@ && date > %@", habit, startOfToday as NSDate)
+            
+            if let result = try? context.fetch(request), result.count > 0 {
+                for completion in result {
+                    context.delete(completion)
+                }
+            } else {
+                let completion = HabitCompletion(context: context)
+                completion.date = Date()
+                habit.addToCompletions(completion)
+            }
+            
+            do {
+                try context.save()
+            } catch {
+                print("Toggle habit completion save error", error)
+            }
+            
+            self.state = .finished
+        }
+    }
+}
+
+final class HabitsStore: NSObject, ObservableObject, NSFetchedResultsControllerDelegate {
+    var objectWillChange = PassthroughSubject<Void, Never>()
+    lazy var habitMutationQueue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.maxConcurrentOperationCount = 1
+        return queue
+    }()
     
     var habits: [HabitViewModel] {
         let habits = fetchedResultsController.fetchedObjects ?? []
@@ -61,20 +144,22 @@ final class HabitsStore: NSObject, BindableObject, NSFetchedResultsControllerDel
         }
     }
     
-    func complete(habitWithId habitId: NSManagedObjectID) {
-        persistentContainer.performBackgroundTask { (context) in
-            let completion = HabitCompletion(context: context)
-            completion.date = Date()
-            
-            let habit = context.object(with: habitId) as! Habit
-            habit.addToCompletions(completion)
+    func deleteHabit(with id: NSManagedObjectID) {
+        persistentContainer.performBackgroundTask { context in
+            let habit = context.object(with: id)
+            context.delete(habit)
             
             do {
                 try context.save()
             } catch {
-                print("Error saving completion", error)
+                print("Error saving habit", error)
             }
         }
+    }
+    
+    func complete(habitWithId habitId: NSManagedObjectID) {
+        let operation = ToggleHabitCompleteOperation(persistentContainer: persistentContainer, habitId: habitId)
+        habitMutationQueue.addOperation(operation)
     }
     
     override init() {
@@ -92,7 +177,7 @@ final class HabitsStore: NSObject, BindableObject, NSFetchedResultsControllerDel
     }()
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        willChange.send(())
+        objectWillChange.send(())
     }
     
     // MARK: - Core Data stack
@@ -118,20 +203,4 @@ final class HabitsStore: NSObject, BindableObject, NSFetchedResultsControllerDel
         container.viewContext.automaticallyMergesChangesFromParent = true
         return container
     }()
-    
-    // MARK: - Core Data Saving support
-    
-    func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
-    }
 }

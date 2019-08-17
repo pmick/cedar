@@ -3,20 +3,18 @@ import SwiftUI
 struct NewHabitView: View {
     let habitsStore: HabitsStore
 
-    @Binding var shown: Bool
+    @Binding var isPresented: Bool
     
     @State var title: String = ""
-    @State var why: String = ""
     
     var isFormComplete: Bool {
-        return !title.isEmpty && !why.isEmpty
+        return !title.isEmpty
     }
     
     var body: some View {
         NavigationView {
             VStack {
                 EntryFieldView(title: "Title", binding: $title)
-                EntryFieldView(title: "Why", binding: $why)
                 Spacer()
             }
             .padding()
@@ -24,7 +22,7 @@ struct NewHabitView: View {
             .navigationBarItems(
                 leading:
                 Button(action: {
-                    self.shown = false
+                    self.isPresented = false
                 }, label: {
                     Text("Cancel")
                         .foregroundColor(.green)
@@ -32,7 +30,7 @@ struct NewHabitView: View {
                 trailing:
                 Button(action: {
                     self.habitsStore.createHabit(with: self.title)
-                    self.shown = false
+                    self.isPresented = false
                 }, label: {
                     Text("Add")
                         .foregroundColor(isFormComplete ? Color.green : Color.green.opacity(0.3))
@@ -46,7 +44,7 @@ struct NewHabitView: View {
 #if DEBUG
 struct NewHabitView_Previews: PreviewProvider {
     static var previews: some View {
-        NewHabitView(habitsStore: HabitsStore(), shown: Binding<Bool>(getValue: { return true }, setValue: { _ in }))
+        NewHabitView(habitsStore: HabitsStore(), isPresented: Binding(get: { return true }, set: { _ in }))
     }
 }
 #endif
