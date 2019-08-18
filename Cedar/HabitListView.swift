@@ -57,6 +57,6 @@ struct AddButton: View {
             }
         }.sheet(isPresented: $isPresented) {
             return NewHabitView(habitsStore: self.habitsStore, isPresented: self.$isPresented)
-        }
+        }.accessibility(label: Text("Add New Habit"))
     }
 }
