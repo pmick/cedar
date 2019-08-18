@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14886.2" systemVersion="19A512f" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14886.2" systemVersion="19A526h" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Habit" representedClassName="Habit" syncable="YES" codeGenerationType="class">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="reason" optional="YES" attributeType="String"/>
         <attribute name="title" attributeType="String"/>
         <relationship name="completions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="HabitCompletion" inverseName="habit" inverseEntity="HabitCompletion"/>
     </entity>
@@ -13,7 +14,7 @@
         </fetchIndex>
     </entity>
     <elements>
-        <element name="Habit" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Habit" positionX="-63" positionY="-18" width="128" height="103"/>
         <element name="HabitCompletion" positionX="-54" positionY="0" width="128" height="73"/>
     </elements>
 </model>

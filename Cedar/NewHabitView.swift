@@ -6,15 +6,17 @@ struct NewHabitView: View {
     @Binding var isPresented: Bool
     
     @State var title: String = ""
+    @State var reason: String = ""
     
     var isFormComplete: Bool {
-        return !title.isEmpty
+        return !title.isEmpty && !reason.isEmpty
     }
     
     var body: some View {
         NavigationView {
             VStack {
                 EntryFieldView(title: "Title", binding: $title)
+                EntryFieldView(title: "Reason", binding: $reason)
                 Spacer()
             }
             .padding()
@@ -25,15 +27,15 @@ struct NewHabitView: View {
                     self.isPresented = false
                 }, label: {
                     Text("Cancel")
-                        .foregroundColor(.green)
+                        .foregroundColor(.cedarGreen)
                 }),
                 trailing:
                 Button(action: {
-                    self.habitsStore.createHabit(with: self.title)
+                    self.habitsStore.createHabit(with: self.title, reason: self.reason)
                     self.isPresented = false
                 }, label: {
                     Text("Add")
-                        .foregroundColor(isFormComplete ? Color.green : Color.green.opacity(0.3))
+                        .foregroundColor(isFormComplete ? Color.cedarGreen : Color.cedarGreen.opacity(0.3))
                         .fontWeight(.bold)
                 }).disabled(!isFormComplete)
             )

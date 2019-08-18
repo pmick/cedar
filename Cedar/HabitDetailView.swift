@@ -1,3 +1,4 @@
+import CoreData
 import SwiftUI
 
 struct HabitDetailView: View {
@@ -20,6 +21,8 @@ struct HabitDetailView: View {
                 self.onClose()
             }, label: {
                 Text("Close")
+                    .fontWeight(.bold)
+                    .foregroundColor(.cedarGreen)
             }))
         }
     }
@@ -28,9 +31,7 @@ struct HabitDetailView: View {
 #if DEBUG
 extension HabitViewModel {
     static var test: HabitViewModel {
-        let habit = Habit()
-        habit.title = "Workout"
-        return HabitViewModel(habit: habit)!
+        return HabitViewModel(id: NSManagedObjectID(), title: "Workout", reason: "Build confidence", isComplete: true, completionDaysAgo: Set())
     }
 }
 

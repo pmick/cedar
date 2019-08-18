@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD0B86122309B83A00FB420B /* Color+Cedar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0B86112309B83A00FB420B /* Color+Cedar.swift */; };
+		CD0B86142309D96A00FB420B /* HabitRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0B86132309D96A00FB420B /* HabitRowView.swift */; };
 		CD3BC5A522E56EAB00896FE7 /* HabitsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC5A422E56EAB00896FE7 /* HabitsStoreTests.swift */; };
 		CD3BC5A722E572EA00896FE7 /* NewHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC5A622E572EA00896FE7 /* NewHabitView.swift */; };
 		CD505E5922E80D400009580B /* HabitsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD505E5822E80D400009580B /* HabitsStore.swift */; };
@@ -18,7 +20,14 @@
 		CD682E5C22E5420300705A23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD682E5A22E5420300705A23 /* LaunchScreen.storyboard */; };
 		CD682E7222E5420300705A23 /* CedarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD682E7122E5420300705A23 /* CedarUITests.swift */; };
 		CDA17DA423087BB600A7C6A0 /* HabitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA17DA323087BB600A7C6A0 /* HabitDetailView.swift */; };
+		CDA17DA62308EEE000A7C6A0 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA17DA52308EEE000A7C6A0 /* CalendarView.swift */; };
 		CDDC456022EE90B0009DF238 /* Cedar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CDDC455E22EE90B0009DF238 /* Cedar.xcdatamodeld */; };
+		CDFF346E2309EF2900271184 /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF346D2309EF2900271184 /* HabitViewModel.swift */; };
+		CDFF34702309EF4500271184 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF346F2309EF4500271184 /* AsyncOperation.swift */; };
+		CDFF34722309EF9A00271184 /* ToggleHabitCompletionOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF34712309EF9A00271184 /* ToggleHabitCompletionOperation.swift */; };
+		CDFF34742309EFB800271184 /* Date+IntervalOfComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF34732309EFB800271184 /* Date+IntervalOfComponent.swift */; };
+		CDFF34762309F03B00271184 /* NSPersistentContainer+BackgroundSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF34752309F03B00271184 /* NSPersistentContainer+BackgroundSave.swift */; };
+		CDFF34782309F0BB00271184 /* OperationQueue+Serial.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF34772309F0BB00271184 /* OperationQueue+Serial.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD0B86112309B83A00FB420B /* Color+Cedar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Cedar.swift"; sourceTree = "<group>"; };
+		CD0B86132309D96A00FB420B /* HabitRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRowView.swift; sourceTree = "<group>"; };
 		CD3BC5A422E56EAB00896FE7 /* HabitsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HabitsStoreTests.swift; path = ../../../../../System/Volumes/Data/Users/patrickmick/Desktop/Cedar/CedarTests/HabitsStoreTests.swift; sourceTree = "<group>"; };
 		CD3BC5A622E572EA00896FE7 /* NewHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewHabitView.swift; path = ../../../../../System/Volumes/Data/Users/patrickmick/Desktop/Cedar/Cedar/NewHabitView.swift; sourceTree = "<group>"; };
 		CD505E5822E80D400009580B /* HabitsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HabitsStore.swift; path = ../../../../../System/Volumes/Data/Users/patrickmick/Desktop/Cedar/Cedar/HabitsStore.swift; sourceTree = "<group>"; };
@@ -56,7 +67,14 @@
 		CD682E7122E5420300705A23 /* CedarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CedarUITests.swift; sourceTree = "<group>"; };
 		CD682E7322E5420300705A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDA17DA323087BB600A7C6A0 /* HabitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailView.swift; sourceTree = "<group>"; };
+		CDA17DA52308EEE000A7C6A0 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		CDDC455F22EE90B0009DF238 /* Cedar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cedar.xcdatamodel; sourceTree = "<group>"; };
+		CDFF346D2309EF2900271184 /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
+		CDFF346F2309EF4500271184 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		CDFF34712309EF9A00271184 /* ToggleHabitCompletionOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleHabitCompletionOperation.swift; sourceTree = "<group>"; };
+		CDFF34732309EFB800271184 /* Date+IntervalOfComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+IntervalOfComponent.swift"; sourceTree = "<group>"; };
+		CDFF34752309F03B00271184 /* NSPersistentContainer+BackgroundSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPersistentContainer+BackgroundSave.swift"; sourceTree = "<group>"; };
+		CDFF34772309F0BB00271184 /* OperationQueue+Serial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OperationQueue+Serial.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +136,15 @@
 				CD682E5A22E5420300705A23 /* LaunchScreen.storyboard */,
 				CD682E5D22E5420300705A23 /* Info.plist */,
 				CD682E5722E5420300705A23 /* Preview Content */,
+				CDA17DA52308EEE000A7C6A0 /* CalendarView.swift */,
+				CD0B86112309B83A00FB420B /* Color+Cedar.swift */,
+				CD0B86132309D96A00FB420B /* HabitRowView.swift */,
+				CDFF346D2309EF2900271184 /* HabitViewModel.swift */,
+				CDFF346F2309EF4500271184 /* AsyncOperation.swift */,
+				CDFF34712309EF9A00271184 /* ToggleHabitCompletionOperation.swift */,
+				CDFF34732309EFB800271184 /* Date+IntervalOfComponent.swift */,
+				CDFF34752309F03B00271184 /* NSPersistentContainer+BackgroundSave.swift */,
+				CDFF34772309F0BB00271184 /* OperationQueue+Serial.swift */,
 			);
 			path = Cedar;
 			sourceTree = "<group>";
@@ -281,10 +308,19 @@
 			files = (
 				CDA17DA423087BB600A7C6A0 /* HabitDetailView.swift in Sources */,
 				CD3BC5A722E572EA00896FE7 /* NewHabitView.swift in Sources */,
+				CD0B86142309D96A00FB420B /* HabitRowView.swift in Sources */,
+				CDFF34762309F03B00271184 /* NSPersistentContainer+BackgroundSave.swift in Sources */,
+				CDA17DA62308EEE000A7C6A0 /* CalendarView.swift in Sources */,
 				CDDC456022EE90B0009DF238 /* Cedar.xcdatamodeld in Sources */,
+				CDFF34742309EFB800271184 /* Date+IntervalOfComponent.swift in Sources */,
+				CDFF34782309F0BB00271184 /* OperationQueue+Serial.swift in Sources */,
+				CDFF346E2309EF2900271184 /* HabitViewModel.swift in Sources */,
 				CD682E5022E5420100705A23 /* AppDelegate.swift in Sources */,
 				CD682E5222E5420100705A23 /* SceneDelegate.swift in Sources */,
+				CD0B86122309B83A00FB420B /* Color+Cedar.swift in Sources */,
 				CD505E5922E80D400009580B /* HabitsStore.swift in Sources */,
+				CDFF34722309EF9A00271184 /* ToggleHabitCompletionOperation.swift in Sources */,
+				CDFF34702309EF4500271184 /* AsyncOperation.swift in Sources */,
 				CD682E5422E5420100705A23 /* HabitListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
