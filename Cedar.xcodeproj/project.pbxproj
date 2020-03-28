@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C831387242FA369006E45E1 /* NewHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C831386242FA369006E45E1 /* NewHabitView.swift */; };
+		9C831389242FA3AD006E45E1 /* HabitStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C831388242FA3AD006E45E1 /* HabitStore.swift */; };
 		CD0B86122309B83A00FB420B /* Color+Cedar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0B86112309B83A00FB420B /* Color+Cedar.swift */; };
 		CD0B86142309D96A00FB420B /* HabitRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0B86132309D96A00FB420B /* HabitRowView.swift */; };
 		CD3BC5A522E56EAB00896FE7 /* HabitsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC5A422E56EAB00896FE7 /* HabitsStoreTests.swift */; };
-		CD3BC5A722E572EA00896FE7 /* NewHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC5A622E572EA00896FE7 /* NewHabitView.swift */; };
-		CD505E5922E80D400009580B /* HabitsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD505E5822E80D400009580B /* HabitsStore.swift */; };
 		CD682E5022E5420100705A23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD682E4F22E5420100705A23 /* AppDelegate.swift */; };
 		CD682E5222E5420100705A23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD682E5122E5420100705A23 /* SceneDelegate.swift */; };
 		CD682E5422E5420100705A23 /* HabitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD682E5322E5420100705A23 /* HabitListView.swift */; };
@@ -48,11 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C831386242FA369006E45E1 /* NewHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitView.swift; sourceTree = "<group>"; };
+		9C831388242FA3AD006E45E1 /* HabitStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitStore.swift; sourceTree = "<group>"; };
 		CD0B86112309B83A00FB420B /* Color+Cedar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Cedar.swift"; sourceTree = "<group>"; };
 		CD0B86132309D96A00FB420B /* HabitRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRowView.swift; sourceTree = "<group>"; };
 		CD3BC5A422E56EAB00896FE7 /* HabitsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HabitsStoreTests.swift; path = ../../../../../System/Volumes/Data/Users/patrickmick/Desktop/Cedar/CedarTests/HabitsStoreTests.swift; sourceTree = "<group>"; };
-		CD3BC5A622E572EA00896FE7 /* NewHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewHabitView.swift; path = ../../../../../System/Volumes/Data/Users/patrickmick/Desktop/Cedar/Cedar/NewHabitView.swift; sourceTree = "<group>"; };
-		CD505E5822E80D400009580B /* HabitsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HabitsStore.swift; path = ../../../../../System/Volumes/Data/Users/patrickmick/Desktop/Cedar/Cedar/HabitsStore.swift; sourceTree = "<group>"; };
 		CD682E4C22E5420100705A23 /* Cedar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cedar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD682E4F22E5420100705A23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD682E5122E5420100705A23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,9 +128,7 @@
 				CD682E4F22E5420100705A23 /* AppDelegate.swift */,
 				CD682E5122E5420100705A23 /* SceneDelegate.swift */,
 				CD682E5322E5420100705A23 /* HabitListView.swift */,
-				CD3BC5A622E572EA00896FE7 /* NewHabitView.swift */,
 				CDA17DA323087BB600A7C6A0 /* HabitDetailView.swift */,
-				CD505E5822E80D400009580B /* HabitsStore.swift */,
 				CDDC455E22EE90B0009DF238 /* Cedar.xcdatamodeld */,
 				CD682E5522E5420300705A23 /* Assets.xcassets */,
 				CD682E5A22E5420300705A23 /* LaunchScreen.storyboard */,
@@ -145,6 +143,8 @@
 				CDFF34732309EFB800271184 /* Date+IntervalOfComponent.swift */,
 				CDFF34752309F03B00271184 /* NSPersistentContainer+BackgroundSave.swift */,
 				CDFF34772309F0BB00271184 /* OperationQueue+Serial.swift */,
+				9C831386242FA369006E45E1 /* NewHabitView.swift */,
+				9C831388242FA3AD006E45E1 /* HabitStore.swift */,
 			);
 			path = Cedar;
 			sourceTree = "<group>";
@@ -306,8 +306,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C831389242FA3AD006E45E1 /* HabitStore.swift in Sources */,
 				CDA17DA423087BB600A7C6A0 /* HabitDetailView.swift in Sources */,
-				CD3BC5A722E572EA00896FE7 /* NewHabitView.swift in Sources */,
 				CD0B86142309D96A00FB420B /* HabitRowView.swift in Sources */,
 				CDFF34762309F03B00271184 /* NSPersistentContainer+BackgroundSave.swift in Sources */,
 				CDA17DA62308EEE000A7C6A0 /* CalendarView.swift in Sources */,
@@ -318,8 +318,8 @@
 				CD682E5022E5420100705A23 /* AppDelegate.swift in Sources */,
 				CD682E5222E5420100705A23 /* SceneDelegate.swift in Sources */,
 				CD0B86122309B83A00FB420B /* Color+Cedar.swift in Sources */,
-				CD505E5922E80D400009580B /* HabitsStore.swift in Sources */,
 				CDFF34722309EF9A00271184 /* ToggleHabitCompletionOperation.swift in Sources */,
+				9C831387242FA369006E45E1 /* NewHabitView.swift in Sources */,
 				CDFF34702309EF4500271184 /* AsyncOperation.swift in Sources */,
 				CD682E5422E5420100705A23 /* HabitListView.swift in Sources */,
 			);
@@ -488,6 +488,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "Cedar/Preview\\ Content";
+				DEVELOPMENT_TEAM = Y45474Z24J;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Cedar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -507,6 +508,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "Cedar/Preview\\ Content";
+				DEVELOPMENT_TEAM = Y45474Z24J;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Cedar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -647,7 +649,7 @@
 			);
 			currentVersion = CDDC455F22EE90B0009DF238 /* Cedar.xcdatamodel */;
 			name = Cedar.xcdatamodeld;
-			path = /System/Volumes/Data/Users/patrickmick/Desktop/Cedar/Cedar/Cedar.xcdatamodeld;
+			path = ./Cedar/Cedar.xcdatamodeld;
 			sourceTree = "<absolute>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
