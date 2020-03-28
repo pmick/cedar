@@ -31,7 +31,7 @@ jobs:
     env:
       DEVICE: "iPhone 11"
       DERIVED_DATA_PATH: "DerivedData"
-      UNIT_TEST_TARGET: "ActionsTests"
+      UNIT_TEST_TARGET: "CedarTests"
     runs-on: macos-latest
     needs: build
     steps:
@@ -55,7 +55,7 @@ jobs:
     env:
       DEVICE: "iPhone 11"
       DERIVED_DATA_PATH: "DerivedData"
-      UI_TEST_TARGET: "ActionsUITests"
+      UI_TEST_TARGET: "CedarUITests"
     runs-on: macos-latest
     needs: build
     steps:
