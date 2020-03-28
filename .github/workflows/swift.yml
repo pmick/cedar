@@ -13,7 +13,7 @@ jobs:
       SCHEME: "Actions"
       DEVICE: "iPhone 11"
       DERIVED_DATA_PATH: "DerivedData"
-    runs-on: macOS-latest
+    runs-on: macos-latest
     steps:
     - name: Checkout project
       uses: actions/checkout@v1
@@ -32,7 +32,7 @@ jobs:
       DEVICE: "iPhone 11"
       DERIVED_DATA_PATH: "DerivedData"
       UNIT_TEST_TARGET: "ActionsTests"
-    runs-on: macOS-latest
+    runs-on: macos-latest
     needs: build
     steps:
     - name: Checkout project
@@ -56,7 +56,7 @@ jobs:
       DEVICE: "iPhone 11"
       DERIVED_DATA_PATH: "DerivedData"
       UI_TEST_TARGET: "ActionsUITests"
-    runs-on: macOS-latest
+    runs-on: macos-latest
     needs: build
     steps:
     - name: Checkout project 
@@ -73,7 +73,7 @@ jobs:
     name: Static analyze
     env:
       DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
-    runs-on: macOS-latest
+    runs-on: macos-latest
     needs: unit_test
     steps:
     - name: Checkout project
