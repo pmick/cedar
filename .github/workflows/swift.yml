@@ -82,9 +82,9 @@ jobs:
       uses: actions/download-artifact@v1
       with:
         name: TestLogs
-    - name: Setup bundle
-      run: |
-        bundle install
-    - name: Danger
-      run: |
-        bundle exec danger
+    #- name: Setup bundle
+    #  run: |
+    #    bundle install
+    #- name: Danger
+    #  run: |
+    #    bundle exec danger
