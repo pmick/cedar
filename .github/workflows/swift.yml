@@ -10,7 +10,7 @@ jobs:
   build:
     name: Build
     env:
-      SCHEME: "Actions"
+      SCHEME: "Cedar"
       DEVICE: "iPhone 11"
       DERIVED_DATA_PATH: "DerivedData"
     runs-on: macos-latest
