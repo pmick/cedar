@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		9C831387242FA369006E45E1 /* NewHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C831386242FA369006E45E1 /* NewHabitView.swift */; };
 		9C831389242FA3AD006E45E1 /* HabitStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C831388242FA3AD006E45E1 /* HabitStore.swift */; };
+		9CB8343B242FA89100EBFA09 /* HabitsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8343A242FA89100EBFA09 /* HabitsStoreTests.swift */; };
 		CD0B86122309B83A00FB420B /* Color+Cedar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0B86112309B83A00FB420B /* Color+Cedar.swift */; };
 		CD0B86142309D96A00FB420B /* HabitRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0B86132309D96A00FB420B /* HabitRowView.swift */; };
-		CD3BC5A522E56EAB00896FE7 /* HabitsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC5A422E56EAB00896FE7 /* HabitsStoreTests.swift */; };
 		CD682E5022E5420100705A23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD682E4F22E5420100705A23 /* AppDelegate.swift */; };
 		CD682E5222E5420100705A23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD682E5122E5420100705A23 /* SceneDelegate.swift */; };
 		CD682E5422E5420100705A23 /* HabitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD682E5322E5420100705A23 /* HabitListView.swift */; };
@@ -50,9 +50,9 @@
 /* Begin PBXFileReference section */
 		9C831386242FA369006E45E1 /* NewHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitView.swift; sourceTree = "<group>"; };
 		9C831388242FA3AD006E45E1 /* HabitStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitStore.swift; sourceTree = "<group>"; };
+		9CB8343A242FA89100EBFA09 /* HabitsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsStoreTests.swift; sourceTree = "<group>"; };
 		CD0B86112309B83A00FB420B /* Color+Cedar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Cedar.swift"; sourceTree = "<group>"; };
 		CD0B86132309D96A00FB420B /* HabitRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRowView.swift; sourceTree = "<group>"; };
-		CD3BC5A422E56EAB00896FE7 /* HabitsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HabitsStoreTests.swift; path = ../../../../../System/Volumes/Data/Users/patrickmick/Desktop/Cedar/CedarTests/HabitsStoreTests.swift; sourceTree = "<group>"; };
 		CD682E4C22E5420100705A23 /* Cedar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cedar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD682E4F22E5420100705A23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD682E5122E5420100705A23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				CD682E6822E5420300705A23 /* Info.plist */,
-				CD3BC5A422E56EAB00896FE7 /* HabitsStoreTests.swift */,
+				9CB8343A242FA89100EBFA09 /* HabitsStoreTests.swift */,
 			);
 			path = CedarTests;
 			sourceTree = "<group>";
@@ -246,6 +246,7 @@
 					};
 					CD682E6122E5420300705A23 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1130;
 						TestTargetID = CD682E4B22E5420100705A23;
 					};
 					CD682E6C22E5420300705A23 = {
@@ -329,7 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD3BC5A522E56EAB00896FE7 /* HabitsStoreTests.swift in Sources */,
+				9CB8343B242FA89100EBFA09 /* HabitsStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +528,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CedarTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -536,6 +538,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.patrickmick.CedarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cedar.app/Cedar";
@@ -547,6 +550,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CedarTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
