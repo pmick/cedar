@@ -43,13 +43,11 @@ final class HabitsStore: NSObject, ObservableObject, NSFetchedResultsControllerD
     }
 
     // MARK: - NSFetchedResultsControllerDelegate
-
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         objectWillChange.send(())
     }
 
     // MARK: - Core Data stack
-
     private lazy var persistentContainer: NSPersistentCloudKitContainer = {
         let container = NSPersistentCloudKitContainer(name: "Cedar")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in

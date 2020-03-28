@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9C831387242FA369006E45E1 /* NewHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C831386242FA369006E45E1 /* NewHabitView.swift */; };
-		9C831389242FA3AD006E45E1 /* HabitStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C831388242FA3AD006E45E1 /* HabitStore.swift */; };
 		9CB8343B242FA89100EBFA09 /* HabitsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8343A242FA89100EBFA09 /* HabitsStoreTests.swift */; };
+		9CB8343D242FAA4900EBFA09 /* HabitsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8343C242FAA4900EBFA09 /* HabitsStore.swift */; };
 		CD0B86122309B83A00FB420B /* Color+Cedar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0B86112309B83A00FB420B /* Color+Cedar.swift */; };
 		CD0B86142309D96A00FB420B /* HabitRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0B86132309D96A00FB420B /* HabitRowView.swift */; };
 		CD682E5022E5420100705A23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD682E4F22E5420100705A23 /* AppDelegate.swift */; };
@@ -49,8 +49,8 @@
 
 /* Begin PBXFileReference section */
 		9C831386242FA369006E45E1 /* NewHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitView.swift; sourceTree = "<group>"; };
-		9C831388242FA3AD006E45E1 /* HabitStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitStore.swift; sourceTree = "<group>"; };
 		9CB8343A242FA89100EBFA09 /* HabitsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsStoreTests.swift; sourceTree = "<group>"; };
+		9CB8343C242FAA4900EBFA09 /* HabitsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsStore.swift; sourceTree = "<group>"; };
 		CD0B86112309B83A00FB420B /* Color+Cedar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Cedar.swift"; sourceTree = "<group>"; };
 		CD0B86132309D96A00FB420B /* HabitRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRowView.swift; sourceTree = "<group>"; };
 		CD682E4C22E5420100705A23 /* Cedar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cedar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +125,7 @@
 		CD682E4E22E5420100705A23 /* Cedar */ = {
 			isa = PBXGroup;
 			children = (
+				9CB8343C242FAA4900EBFA09 /* HabitsStore.swift */,
 				CD682E4F22E5420100705A23 /* AppDelegate.swift */,
 				CD682E5122E5420100705A23 /* SceneDelegate.swift */,
 				CD682E5322E5420100705A23 /* HabitListView.swift */,
@@ -144,7 +145,6 @@
 				CDFF34752309F03B00271184 /* NSPersistentContainer+BackgroundSave.swift */,
 				CDFF34772309F0BB00271184 /* OperationQueue+Serial.swift */,
 				9C831386242FA369006E45E1 /* NewHabitView.swift */,
-				9C831388242FA3AD006E45E1 /* HabitStore.swift */,
 			);
 			path = Cedar;
 			sourceTree = "<group>";
@@ -307,11 +307,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C831389242FA3AD006E45E1 /* HabitStore.swift in Sources */,
 				CDA17DA423087BB600A7C6A0 /* HabitDetailView.swift in Sources */,
 				CD0B86142309D96A00FB420B /* HabitRowView.swift in Sources */,
 				CDFF34762309F03B00271184 /* NSPersistentContainer+BackgroundSave.swift in Sources */,
 				CDA17DA62308EEE000A7C6A0 /* CalendarView.swift in Sources */,
+				9CB8343D242FAA4900EBFA09 /* HabitsStore.swift in Sources */,
 				CDDC456022EE90B0009DF238 /* Cedar.xcdatamodeld in Sources */,
 				CDFF34742309EFB800271184 /* Date+IntervalOfComponent.swift in Sources */,
 				CDFF34782309F0BB00271184 /* OperationQueue+Serial.swift in Sources */,
